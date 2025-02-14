@@ -6,6 +6,12 @@ import Excitementemojirain from "./Excietment";
 
 import "./valentine.css";
 
+// Images import
+import puppyhug1 from "../assets/puppieshug.jpeg";
+import puppyhug2 from "../assets/puppieshug2.jpeg";
+import dogFreakOut1 from "../assets/dogFreakingOut.jpeg";
+import dogFreakOut2 from "../assets/dogFreakingOut2.jpeg";
+
 const Valentine = () => {
   const [yesBtnIndex, setYesBtnIndex] = useState(0);
   const [noBtnIndex, setNoBtnIndex] = useState(0);
@@ -13,11 +19,13 @@ const Valentine = () => {
   const [showHappyEmojirain, setHappyShowEmojirain] = useState(null);
   const [yesBtnSize, setYesBtnSize] = useState(1);
 
+  const [bgImage, setBgImage] = useState(null);
+
   const yesBtnContentArray = [
     "Yes",
     "Really??",
     "Are you really sure?",
-    "Are you For Sure ForSho?",
+    "Are you For Sure For Sure?",
     "Awwwwww! I LOVE YOU 💓",
   ];
   const noBtnContentArray = [
@@ -31,6 +39,16 @@ const Valentine = () => {
     setClickedYes(true);
     setYesBtnIndex((prevIndex) => {
       const newIndex = (prevIndex + 1) % yesBtnContentArray.length;
+
+      // Set background based on yesBtnIndex
+      if (newIndex === 1 || newIndex === 2) {
+        setBgImage(puppyhug1);
+      } else if (newIndex === 3) {
+        setBgImage(null);
+      } else if (newIndex === 4) {
+        setBgImage(puppyhug2);
+      }
+
       if (newIndex === 2 || newIndex === yesBtnContentArray.length - 1) {
         setHappyShowEmojirain(true);
       } else {
@@ -39,25 +57,36 @@ const Valentine = () => {
       return newIndex;
     });
     setNoBtnIndex(0);
-    setYesBtnSize(1); // Reset size when clicking Yes
+    setYesBtnSize(1);
   }
 
   const changeNoBtnContent = () => {
     setClickedYes(false);
     setNoBtnIndex((prevIndex) => {
       const newIndex = (prevIndex + 1) % noBtnContentArray.length;
-      if (newIndex === noBtnContentArray.length - 1) {
-        setHappyShowEmojirain(null);
+
+      // Set background based on noBtnIndex
+      if (newIndex === 1) {
+        setBgImage(dogFreakOut1);
+      } else if (newIndex === 2) {
+        setBgImage(dogFreakOut2);
+      } else if (newIndex === 3) {
+        setBgImage(puppyhug2);
       }
+
       return newIndex;
     });
     setYesBtnIndex(0);
     setHappyShowEmojirain(false);
-    setYesBtnSize((prevSize) => prevSize + 0.3); // Increase size of Yes button
+    setYesBtnSize((prevSize) => prevSize + 0.3);
   };
 
   return (
-    <main>
+    <main
+      style={{
+        backgroundImage: bgImage ? `url(${bgImage})` : "none",
+      }}
+    >
       <section className="valentine_section">
         <div className="test">
           <div className="question">
@@ -78,7 +107,7 @@ const Valentine = () => {
                 <button
                   className="btn yes"
                   onClick={changeYesBtnContent}
-                  style={{ transform: `scale(${yesBtnSize})` }} // Dynamic size
+                  style={{ transform: `scale(${yesBtnSize})` }}
                 >
                   ❤️💓
                 </button>
@@ -86,7 +115,7 @@ const Valentine = () => {
                 <button
                   className="btn yes"
                   onClick={changeYesBtnContent}
-                  style={{ transform: `scale(${yesBtnSize})` }} // Dynamic size
+                  style={{ transform: `scale(${yesBtnSize})` }}
                 >
                   Yes
                 </button>
