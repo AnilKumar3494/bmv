@@ -11,6 +11,7 @@ import puppyhug1 from "../assets/puppieshug.jpeg";
 import puppyhug2 from "../assets/puppieshug2.jpeg";
 import dogFreakOut1 from "../assets/dogFreakingOut.jpeg";
 import dogFreakOut2 from "../assets/dogFreakingOut2.jpeg";
+import justSayYes from "../assets/justSayYes.png";
 
 const Valentine = () => {
   const [yesBtnIndex, setYesBtnIndex] = useState(0);
@@ -25,7 +26,7 @@ const Valentine = () => {
     "Yes",
     "Really??",
     "Are you really sure?",
-    "Are you For Sure For Sure?",
+    "Are you For Sure 'For Sure'?",
     "Awwwwww! I LOVE YOU 💓",
   ];
   const noBtnContentArray = [
@@ -71,7 +72,7 @@ const Valentine = () => {
       } else if (newIndex === 2) {
         setBgImage(dogFreakOut2);
       } else if (newIndex === 3) {
-        setBgImage(puppyhug2);
+        setBgImage(justSayYes);
       }
 
       return newIndex;
