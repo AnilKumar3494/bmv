@@ -1,12 +1,12 @@
 main {
-  background: url(../assets/4825387.jpg);
+  background: url(../assets/puppieshug.jpeg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 }
 
 h2 {
-  font-size: 2.2rem;
+  font-size: clamp(2rem, 4vw, 3.4rem);
   font-weight: 800;
   text-shadow: -2px 2px #b5626e, -5px 5px #711e39;
   padding-bottom: 0.5rem;
@@ -27,7 +27,7 @@ h4 {
 .test {
   height: 100%;
 
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(2px);
 
   display: grid;
   place-items: center;
@@ -43,7 +43,7 @@ h4 {
 
 .buttons {
   display: flex;
-  gap: 1rem;
+  gap: 3rem;
 }
 
 .btn {
@@ -64,28 +64,9 @@ h4 {
 }
 
 .yes {
-  background-color: lightgreen;
+  background-color: rgb(114, 239, 114);
 }
 
 .no {
-  background-color: red;
-}
-
-/* responsive */
-@media (max-width: 700px) {
-  h2,
-  h4 {
-    font-size: 1.3rem;
-  }
-}
-
-@media (max-width: 450px) {
-  h2,
-  h4 {
-    font-size: 1.3rem;
-  }
-  .btn {
-    font-size: 1rem;
-    padding: 0.8rem;
-  }
+  background-color: rgb(227, 80, 80);
 }
