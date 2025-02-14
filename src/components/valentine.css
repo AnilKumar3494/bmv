@@ -1,15 +1,15 @@
 main {
-  background: url(../assets/puppieshug.jpeg);
+  background: url(../assets/puppieshug2.jpeg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 }
 
 h2 {
-  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-size: clamp(1.6rem, 2.5vw + 1rem, 3.4rem);
   font-weight: 800;
   text-shadow: -2px 2px #b5626e, -5px 5px #711e39;
-  padding-bottom: 0.5rem;
+  padding-bottom: 2rem;
 }
 h4 {
   padding-top: 1rem;
@@ -35,6 +35,7 @@ h4 {
 
 .question {
   border: 2px solid saddlebrown;
+  border-radius: 1rem;
   display: grid;
   place-items: center;
   gap: 1.1rem;

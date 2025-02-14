@@ -11,14 +11,14 @@ const Valentine = () => {
   const [noBtnIndex, setNoBtnIndex] = useState(0);
   const [clickedYes, setClickedYes] = useState(null);
   const [showHappyEmojirain, setHappyShowEmojirain] = useState(null);
-  const [yesBtnSize, setYesBtnSize] = useState(1); // Initial size multiplier
+  const [yesBtnSize, setYesBtnSize] = useState(1);
 
   const yesBtnContentArray = [
     "Yes",
     "Really??",
     "Are you really sure?",
-    "Are you really really sure?",
-    "Awwww! I LOVE YOU 💓",
+    "Are you For Sure ForSho?",
+    "Awwwwww! I LOVE YOU 💓",
   ];
   const noBtnContentArray = [
     "No",
